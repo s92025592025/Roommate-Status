@@ -6,4 +6,5 @@
 <h2>Progress</h2>
 <ul>
 	<li>2016/09/20: start making a small scale testing</li>
+	<li>2016/09/20: make user end editing</li>
 </ul>
