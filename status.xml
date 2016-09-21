@@ -1,5 +1,5 @@
 <status>
-	<!--Should have Avaliable, Buzy, Do Not Disturb and Out-->
-	<general></general>
-	<text></text>
+	<!--Should have Avaliable, Busy, Do Not Disturb and Out-->
+	<general avaliable="Busy"></general>
+	<text>Free!!!</text>
 </status>

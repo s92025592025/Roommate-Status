@@ -1,5 +1,5 @@
 <?php
-	function HTMLHeader($title){
+	function HTMLHeader($title, $css, $js){
 		?>
 			<!DOCTYPE html>
 				<html>
@@ -15,8 +15,12 @@
 
 						<!-- Latest compiled and minified JavaScript -->
 						<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-						<!--self define css-->
+						<!--common css-->
 						<link rel="stylesheet" href="common.css">
+						<!--self define css-->
+						<link rel="stylesheet" href="<?=$css?>">
+						<!--self define js-->
+						<script src="<?=$js?>"></script>
 						<title><?=$title?></title>
 					</head>
 					<body>
