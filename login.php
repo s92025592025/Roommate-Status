@@ -29,12 +29,14 @@
 		<?php
 		HTMLFooter();
 	}else{
+		session_start();
 		if(!isset($_POST["passcode"]) || $_POST["passcode"] == ""){
 			returnToLogin();
 		}
 
 		if($_POST["passcode"] == trim(file("pw.txt")[0])){
 			$_SESSION["login"] = "TRUE";
+			checkLoggedIn();
 			header("Location: editStatus.php");
 			die();
 		}else{	
