@@ -2,7 +2,7 @@
 	include "common.php";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-
+		editStatus();
 	}else{
 		showForm();
 	}
@@ -35,5 +35,29 @@
 			</div>
 		<?php
 		HTMLFooter();
+	}
+
+	function editStatus(){
+		checkLoggedIn();
+
+		if(!isset($_POST["general"]) || $_POST["general"] == ""){
+			header("location:javascript://history.go(-1)");
+			die();
+		}
+
+		$xml = new DOMDocument();
+		$xml->load("status.xml");
+		$xml->getElementsByTagName("general")->item(0)->setAttribute("avaliable", $_POST["general"]);
+
+		if(!isset($_POST["memo"]) || trim($_POST["memo"]) == ""){
+			$xml->getElementsByTagName("text")->item(0)->nodeValue = $_POST["general"];
+		}else{
+			$xml->getElementsByTagName("text")->item(0)->nodeValue = $_POST["memo"];
+		}
+
+		$xml->save("status.xml");
+
+		header("Location: editStatus.php");
+		die();
 	}
 ?>
