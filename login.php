@@ -17,7 +17,7 @@
 						<div class="form-group">
 							<label class="control-label">Passcode: </label>
 							<div>
-								<input type="password" class="form-control" id="passcode">
+								<input type="password" class="form-control" name="passcode">
 							</div>
 						</div>
 						<div class="form-group">
@@ -28,5 +28,17 @@
 			</div>
 		<?php
 		HTMLFooter();
-	}else{}
+	}else{
+		if(!isset($_POST["passcode"]) || $_POST["passcode"] == ""){
+			returnToLogin();
+		}
+
+		if($_POST["passcode"] == trim(file("pw.txt")[0])){
+			$_SESSION["login"] = "TRUE";
+			header("Location: editStatus.php");
+			die();
+		}else{	
+			returnToLogin();
+		}
+	}
 ?>
