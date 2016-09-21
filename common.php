@@ -33,4 +33,16 @@
 			</html>
 		<?php
 	}
+
+	function checkLoggedIn(){
+		session_start();
+
+		if(!isset($_SESSION["login"]) || $_SESSION["login"] == "TRUE"){
+			session_unset();
+			session_destroy();
+			header("Location: login.php");
+			die();
+		}
+	}
+
 ?>
