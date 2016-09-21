@@ -32,6 +32,11 @@
 						<button class="btn btn-primary" type="submit">Update</button>
 					</div>
 				</form>
+
+				<div class="col-sm-offset-4">
+					<p>Print the QR below to let your friend scan</p>
+					<img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http%3A%2F%2Fdaniel-websit.azurewebsites.net%2Froommate-status%2Findex.php"/>
+				</div>
 			</div>
 		<?php
 		HTMLFooter();
