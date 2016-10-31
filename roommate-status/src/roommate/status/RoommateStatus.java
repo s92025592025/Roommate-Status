@@ -16,6 +16,7 @@ public class RoommateStatus {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        window w = new window();
     }
-    
+
 }

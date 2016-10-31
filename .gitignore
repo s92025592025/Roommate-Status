@@ -47,4 +47,7 @@ Temporary Items
 .apdisk
 
 pw.txt
+ip.txt
 /roommate-status/nbproject/private/
+/roommate-status/build/
+/roommate-status/dist/
