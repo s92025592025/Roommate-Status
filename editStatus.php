@@ -2,7 +2,11 @@
 	include "common.php";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		editStatus();
+		if(isset($_POST["source"])){
+			editXML();
+		}else{
+			editStatus();
+		}
 	}else{
 		showForm();
 	}
@@ -50,6 +54,13 @@
 			die();
 		}
 
+		editXML();
+
+		header("Location: editStatus.php");
+		die();
+	}
+
+	function editXML(){
 		$xml = new DOMDocument();
 		$xml->load("status.xml");
 		$xml->getElementsByTagName("general")->item(0)->setAttribute("avaliable", $_POST["general"]);
@@ -61,8 +72,5 @@
 		}
 
 		$xml->save("status.xml");
-
-		header("Location: editStatus.php");
-		die();
 	}
 ?>
